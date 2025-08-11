@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<style>
+    html {
+        background-color: rgb(255, 236, 236);
+    }
+
+    body {
+        background-color: white;
+        margin: auto;
+        width: 80vw;
+        height: 100%;
+    }
+
+    .text_center {
+        text-align: center;
+    }
+
+    .bolck_center {
+        margin: auto;
+        width: 50%;
+    }
+
+    .miku_color {
+        color: #39C5BB;
+        margin: auto;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>没有title</title>
+</head>
+
+<body>
+    <!--标题-->
+    <h1 class="text_center miku_color">开学倒计时</h1>
+    <p id="time" class="text_center miku_color" style="font-size: 5vw;">00:00:00:00.0000</p>
+</body>
+<script>
+    function changeTime() {
+        var now = new Date();
+        var nowMillisecond = now.getMilliseconds();
+        var nowTime = now.getTime();
+        var newYearTime = new Date(2025, 9, 1, 7, 30, 0, 0).getTime();
+        var time = newYearTime - nowTime;
+        var day = Math.floor(time / (24 * 3600 * 1000));
+        var hour = Math.floor(time % (24 * 3600 * 1000) / (3600 * 1000));
+        var minute = Math.floor(time % (3600 * 1000) / (60 * 1000));
+        var second = Math.floor(time % (60 * 1000) / 1000);
+        var millisecond = time % 1000;
+        document.getElementById("time").innerHTML = day + ":" + hour + ":" + minute + ":" + second + "." + millisecond;
+    }
+    //每毫秒执行一次changeTime函数
+    setInterval(changeTime, 1);
+</script>
+
+</html>
