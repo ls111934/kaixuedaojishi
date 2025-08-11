@@ -42,7 +42,7 @@
         var now = new Date();
         var nowMillisecond = now.getMilliseconds();
         var nowTime = now.getTime();
-        var newYearTime = new Date(2025, 10, 1, 7, 30, 0, 0).getTime();
+        var newYearTime = new Date(2025, 8, 1, 7, 30, 0, 0).getTime();
         var time = newYearTime - nowTime;
         var day = Math.floor(time / (24 * 3600 * 1000));
         var hour = Math.floor(time % (24 * 3600 * 1000) / (3600 * 1000));
@@ -57,3 +57,4 @@
 
 
 </html>
+
